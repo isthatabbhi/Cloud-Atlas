@@ -1,0 +1,46 @@
+{{> header}}
+{{> nav}}
+<div class="card shadow-sm border mb-4">
+  <div class="card-header bg-white d-flex justify-content-between align-items-center">
+    <h3 class="card-title mb-0">All suppliers</h3>
+    <a href="/admin/supplier-add" class="btn btn-success font-weight-bold">Add a new supplier</a>
+  </div>
+  <div class="card-body p-0">
+    <table class="table table-hover mb-0">
+      <thead class="thead-light">
+        <tr>
+          <th>Name</th>
+          <th>Address</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#suppliers}}
+        <tr>
+          <td><strong>{{name}}</strong></td>
+          <td>{{address}}</td>
+          <td>{{city}}</td>
+          <td>{{state}}</td>
+          <td>{{email}}</td>
+          <td>{{phone}}</td>
+          <td>
+            <a href="/admin/supplier-update/{{id}}" class="btn btn-sm btn-info">edit</a>
+          </td>
+        </tr>
+        {{/suppliers}}
+        {{^suppliers}}
+        <tr>
+          <td colspan="7" class="text-center py-4 text-muted">No suppliers currently listed.</td>
+        </tr>
+        {{/suppliers}}
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+</body>
+</html>

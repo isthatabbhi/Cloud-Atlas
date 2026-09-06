@@ -1,0 +1,17 @@
+{{> header}}
+{{> nav}}
+<div class="card shadow-sm border">
+  <div class="card-header bg-white">
+    <h3>Add a Supplier</h3>
+  </div>
+  <div class="card-body">
+    <form action="/admin/supplier-add" method="POST">
+      {{> supplier-form-fields}}
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <a href="/admin/suppliers" class="btn btn-secondary">Cancel</a>
+    </form>
+  </div>
+</div>
+</div>
+</body>
+</html>
