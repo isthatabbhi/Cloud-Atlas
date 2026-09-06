@@ -195,14 +195,10 @@ During local test container execution on Cloud9:
 </p>
 
 <p align="center">
-  <img src="docs/screenshots/phase-04-docker-microservices/04-task-4.5-employee-microservice-cloud9-port-8081-admin-suppliers.png" width="800" alt="Employee Microservice Test"/>
-  <br/><em>Figure 4.2: Employee administrative microservice running in a Docker container on port 8081 with Add/Edit actions.</em>
+  <img src="docs/screenshots/phase-04-docker-microservices/06-task-4.6-cloud9-ide-employee-code-diff-and-docker-build.png" width="800" alt="Cloud9 Diff and Docker Build"/>
+  <br/><em>Figure 4.2: Cloud9 IDE code diff inspection and Docker container image build.</em>
 </p>
 
-<p align="center">
-  <img src="docs/screenshots/phase-04-docker-microservices/06-task-4.6-cloud9-ide-employee-code-diff-and-docker-build.png" width="800" alt="Cloud9 Diff and Docker Build"/>
-  <br/><em>Figure 4.3: Cloud9 IDE code diff inspection and Docker container image build.</em>
-</p>
 
 ---
 
