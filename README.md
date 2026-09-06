@@ -9,7 +9,7 @@
 
 ---
 
-## 📌 Executive Summary
+## Executive Summary
 
 **Cloud Atlas** is an end-to-end cloud modernization project demonstrating the transformation of an on-premises/single-instance monolithic Node.js web application into a highly available, decoupled, and secure microservices architecture deployed on **Amazon Web Services (AWS)**.
 
@@ -31,7 +31,7 @@ Prior to modernization, the coffee supplier application suffered from classical 
 
 ---
 
-## 🏗️ System Architecture
+## ️ System Architecture
 
 ```mermaid
 graph TD
@@ -93,7 +93,7 @@ graph TD
 
 ---
 
-## 💰 Phase 1: Planning & Cost Estimation
+## Phase 1: Planning & Cost Estimation
 
 Before provisioning cloud infrastructure, a full 12-month Total Cost of Ownership (TCO) estimate was modeled using the **AWS Pricing Calculator** for the `us-east-1` (N. Virginia) region.
 
@@ -120,7 +120,7 @@ Before provisioning cloud infrastructure, a full 12-month Total Cost of Ownershi
 
 ---
 
-## 🔍 Phase 2: Analyzing the Monolithic Infrastructure
+## Phase 2: Analyzing the Monolithic Infrastructure
 
 To understand the existing architecture, the baseline monolithic deployment was investigated:
 1. **EC2 Verification**: Verified `MonolithicAppServer` (`t2.micro` running Ubuntu 20.04 LTS at public IP `54.197.115.40`).
@@ -145,7 +145,7 @@ To understand the existing architecture, the baseline monolithic deployment was 
 
 ---
 
-## 💻 Phase 3: Cloud Development Environment (AWS Cloud9)
+## Phase 3: Cloud Development Environment (AWS Cloud9)
 
 An **AWS Cloud9** cloud-native IDE (`MicroservicesIDE`, running on an Amazon Linux 2 `t3.small` instance in `Public Subnet1`) was provisioned to serve as the unified containerization, build, and Git workspace.
 
@@ -158,7 +158,7 @@ The monolithic codebase was cloned and partitioned into two clean microservice w
 
 ---
 
-## 🐳 Phase 4: Microservice Decomposition & Containerization
+## Phase 4: Microservice Decomposition & Containerization
 
 ### 1. Codebase Refactoring
 - **Customer Microservice (`customer/`)**:
@@ -206,7 +206,7 @@ During local test container execution on Cloud9:
 
 ---
 
-## 📦 Phase 5: Amazon ECR, ECS Cluster & Task Specifications
+## Phase 5: Amazon ECR, ECS Cluster & Task Specifications
 
 ### 1. Amazon Elastic Container Registry (ECR)
 Created two private ECR repositories: `customer` and `employee`. Docker clients were authenticated via AWS CLI credential helpers, and images were tagged and pushed:
@@ -240,7 +240,7 @@ Authored CodeDeploy `appspec-customer.yaml` and `appspec-employee.yaml` referenc
 
 ---
 
-## 🌐 Phase 6: Application Load Balancer & Target Groups
+## Phase 6: Application Load Balancer & Target Groups
 
 To enable Blue/Green deployment and path routing, **four Target Groups** were created (target type: `IP`, protocol: `HTTP:8080`):
 1. `customer-tg-one` (Production Blue)
@@ -264,7 +264,7 @@ An internet-facing **Application Load Balancer** (`microservicesLB`) was deploye
 
 ---
 
-## 🚀 Phase 7 & 8: Zero-Downtime Blue/Green CI/CD Pipeline
+## Phase 7 & 8: Zero-Downtime Blue/Green CI/CD Pipeline
 
 ### 1. CodeDeploy & ECS Service Creation
 Two ECS services (`customer-microservice` and `employee-microservice`) were provisioned with the `CODE_DEPLOY` deployment controller. In AWS CodeDeploy, application `microservices` and two deployment groups (`microservices-customer` and `microservices-employee`) were created with:
@@ -310,7 +310,7 @@ During the Deploy stage, CodePipeline substitutes `<IMAGE1_NAME>` with the exact
 
 ---
 
-## 🔒 Phase 9: Security Whitelisting, UI Iteration & Scaling
+## Phase 9: Security Whitelisting, UI Iteration & Scaling
 
 ### 1. Granular ALB Source IP Whitelisting
 To prevent unauthorized access to sensitive employee administration pages, the ALB HTTP:80 and HTTP:8080 listener rules were updated with composite conditions:
@@ -349,7 +349,7 @@ The Customer microservice instantly scaled across multiple availability zones on
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 
 ```text
 .
@@ -397,7 +397,7 @@ The Customer microservice instantly scaled across multiple availability zones on
 
 ---
 
-## 🛠️ How to Run Locally
+## ️ How to Run Locally
 
 ### Prerequisites
 - Docker Engine 20.10+
@@ -422,7 +422,7 @@ Access at: `http://localhost:8081/admin/suppliers`
 
 ---
 
-## 🏆 Key Takeaways & Architectural Competencies
+## Key Takeaways & Architectural Competencies
 
 1. **Cloud-Native Modernization**: Successfully decomposed a monolithic single-tier application into resilient, decoupled microservices.
 2. **Serverless Containerization**: Leveraged AWS Fargate to achieve zero infrastructure management while maintaining autoscaling elasticity.
@@ -432,7 +432,7 @@ Access at: `http://localhost:8081/admin/suppliers`
 
 ---
 
-## 👤 Author
+## Author
 **Abhishek Kumar**
 - GitHub: [@isthatabbhi](https://github.com/isthatabbhi)
 - Project: Cloud Atlas AWS Modernization
