@@ -1,4 +1,4 @@
-# Cloud Atlas: Monolith to Cloud-Native Microservices & CI/CD on AWS
+# Cloud Atlas - Monolith to Microservices & CI/CD on AWS
 
 [![AWS](https://img.shields.io/badge/AWS-Fargate%20%7C%20ECS%20%7C%20ALB%20%7C%20ECR-232F3E?logo=amazon-aws&logoColor=white)](https://aws.amazon.com/)
 [![CI/CD](https://img.shields.io/badge/CI%2FCD-CodePipeline%20%26%20CodeDeploy-FF9900?logo=amazon-aws&logoColor=white)](https://aws.amazon.com/codepipeline/)
@@ -431,4 +431,4 @@ Access at: `http://localhost:8081/admin/suppliers`
 ## Author
 **Abhishek Kumar**
 - GitHub: [@isthatabbhi](https://github.com/isthatabbhi)
-- Project: Cloud Atlas AWS Modernization
+- Project: Cloud Atlas - Monolith to Microservices & CI/CD on AWS
