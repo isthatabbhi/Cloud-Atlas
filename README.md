@@ -31,7 +31,7 @@ Prior to modernization, the coffee supplier application suffered from classical 
 
 ---
 
-## ️ System Architecture
+## System Architecture
 
 ```mermaid
 graph TD
@@ -350,50 +350,50 @@ The Customer microservice instantly scaled across multiple availability zones on
 ```text
 .
 ├── services/
-│   ├── customer-microservice/          # Read-only customer microservice (port 8080)
-│   │   ├── Dockerfile                  # Lightweight Node.js 11 Alpine container image
-│   │   ├── package.json                # Dependencies: express, express-validator, mysql
-│   │   ├── index.js                    # Express app definition and routing
+│   ├── customer-microservice/
+│   │   ├── Dockerfile
+│   │   ├── package.json
+│   │   ├── index.js
 │   │   ├── app/
-│   │   │   ├── config/config.js        # Environment-driven database connection parameters
-│   │   │   ├── controller/             # Controller logic handling read-only queries
-│   │   │   └── models/                 # MySQL data access model
-│   │   └── views/                      # Mustache HTML templates (home, list, 404, 500)
-│   └── employee-microservice/          # Read-write administrative microservice (port 8080)
-│       ├── Dockerfile                  # Container image definition
+│   │   │   ├── config/config.js
+│   │   │   ├── controller/
+│   │   │   └── models/
+│   │   └── views/
+│   └── employee-microservice/
+│       ├── Dockerfile
 │       ├── package.json
-│       ├── index.js                    # Express app with /admin prefix routing
+│       ├── index.js
 │       ├── app/
 │       │   ├── config/config.js
-│       │   ├── controller/             # Full CRUD controllers (create, read, update, delete)
-│       │   └── models/                 # Database queries with transaction safety
-│       └── views/                      # Administrative templates with forms and light navbar
+│       │   ├── controller/
+│       │   └── models/
+│       └── views/
 ├── deployment/
-│   ├── taskdef-customer.json           # ECS Fargate task definition with dynamic placeholders
-│   ├── taskdef-employee.json           # ECS Fargate task definition for employee service
-│   ├── appspec-customer.yaml           # CodeDeploy AppSpec file for customer service
-│   ├── appspec-employee.yaml           # CodeDeploy AppSpec file for employee service
-│   ├── create-customer-microservice-tg-two.json # Initial CLI ECS service configuration
-│   └── create-employee-microservice-tg-two.json # Initial CLI ECS service configuration
+│   ├── taskdef-customer.json
+│   ├── taskdef-employee.json
+│   ├── appspec-customer.yaml
+│   ├── appspec-employee.yaml
+│   ├── create-customer-microservice-tg-two.json
+│   └── create-employee-microservice-tg-two.json
 ├── docs/
-│   └── screenshots/                    # All 49 chronologically organized project screenshots
-│       ├── phase-01-planning-and-cost/ # AWS Pricing Calculator estimate and PDF report
-│       ├── phase-02-monolith-analysis/ # Monolithic EC2 verification and inspection
-│       ├── phase-03-cloud9-dev-env/    # Cloud9 development IDE
-│       ├── phase-04-docker-microservices/ # Docker container builds and local verification
-│       ├── phase-05-ecr-ecs-fargate/   # ECR repositories and ECS Fargate cluster
-│       ├── phase-06-alb-routing/       # Target groups and Application Load Balancer
-│       ├── phase-07-ecs-services/      # ECS services creation
-│       ├── phase-08-cicd-blue-green/   # CodePipeline and CodeDeploy Blue/Green deployments
-│       └── phase-09-ip-restriction-updates/ # ALB IP whitelisting and auto-deployment
+│   └── screenshots/
+│       ├── phase-01-planning-and-cost/
+│       ├── phase-02-monolith-analysis/
+│       ├── phase-03-cloud9-dev-env/
+│       ├── phase-04-docker-microservices/
+│       ├── phase-05-ecr-ecs-fargate/
+│       ├── phase-06-alb-routing/
+│       ├── phase-07-ecs-services/
+│       ├── phase-08-cicd-blue-green/
+│       └── phase-09-ip-restriction-updates/
 ├── .gitignore
-├── LICENSE                             # MIT License
-└── README.md                           # Comprehensive technical documentation
+├── LICENSE
+└── README.md
 ```
 
 ---
 
-## ️ How to Run Locally
+## How to Run Locally
 
 ### Prerequisites
 - Docker Engine 20.10+
