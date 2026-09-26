@@ -33,6 +33,10 @@ Prior to modernization, the coffee supplier application suffered from classical 
 
 ## System Architecture
 
+![Cloud Atlas Architecture](docs/architecture.png)
+
+*Detailed resource-level view:*
+
 ```mermaid
 graph TD
     subgraph Users ["Client Layer"]
@@ -432,3 +436,4 @@ Access at: `http://localhost:8081/admin/suppliers`
 **Abhishek Kumar**
 - GitHub: [@isthatabbhi](https://github.com/isthatabbhi)
 - Project: Cloud Atlas - Monolith to Microservices & CI/CD on AWS
+
